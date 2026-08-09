@@ -23,6 +23,41 @@
 }
 
 /* ============================================
+   DARK MODE TOKENS
+   ============================================ */
+:root[data-theme="dark"] {
+  --washi: #1C1A17;
+  --washi-2: #26221D;
+  --sumi: #F1ECE2;
+  --sumi-soft: #B7AE9F;
+  --hanko: #E2543A;
+  --hanko-soft: #4A2A22;
+  --moss: #93A886;
+  --line: #38342D;
+  --paper-shadow: rgba(0, 0, 0, 0.4);
+}
+:root[data-theme="dark"] .grain {
+  mix-blend-mode: overlay;
+  opacity: 0.05;
+}
+:root {
+  --header-bg: rgba(243, 239, 230, 0.85);
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --header-bg: rgba(28, 26, 23, 0.85);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+html {
+  transition: background-color .25s var(--ease);
+}
+body, .site-header, section, .card, .btn {
+  transition: background-color .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease);
+}
+
+/* ============================================
    RESET
    ============================================ */
 *, *::before, *::after { box-sizing: border-box; }
@@ -86,7 +121,7 @@ img { max-width: 100%; display: block; }
   position: sticky; top: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 18px var(--gutter);
-  background: rgba(243, 239, 230, 0.85);
+  background: var(--header-bg);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -157,6 +192,23 @@ section {
 .btn--primary:hover { background: var(--hanko); }
 .btn--ghost { border-color: var(--sumi); color: var(--sumi); }
 .btn--ghost:hover { border-color: var(--hanko); color: var(--hanko); }
+.btn--plain { border-color: transparent; padding-left: 4px; padding-right: 4px; }
+.btn--plain:hover { border-color: transparent; color: var(--hanko); background: transparent; }
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 999px;
+  border: 1px solid var(--line); background: none; color: var(--sumi);
+  cursor: pointer; margin-right: 14px; flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--hanko); color: var(--hanko); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-icon--moon { display: none; }
+:root[data-theme="dark"] .theme-icon--sun { display: none; }
+:root[data-theme="dark"] .theme-icon--moon { display: block; }
 
 /* ============================================
    HERO
