@@ -342,7 +342,8 @@ section {
 /* ============================================
    CONTACT
    ============================================ */
-.contact { text-align: left; }
+.contact { text-align: left; position: relative; background: var(--washi-2); padding-top: clamp(72px, 10vw, 120px); } .contact::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: var(--washi-2); z-index: -1; border-top: 1px solid var(--line); }
+
 .contact-inner { max-width: 640px; }
 .contact h2 { margin-bottom: 20px; }
 .contact p { font-size: 17px; max-width: 52ch; }
