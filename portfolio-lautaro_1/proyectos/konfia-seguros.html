@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konfía Seguros | Lautaro Curto</title>
+<meta name="description" content="Caso de estudio: Konfía Seguros, prototipo personal de dashboard de seguros diseñado y construido de punta a punta con React.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <a href="../index.html" class="mark" aria-label="Inicio">
+    <svg class="hanko hanko--nav" viewBox="0 0 60 60" width="28" height="28" aria-hidden="true">
+      <rect x="4" y="4" width="52" height="52" rx="6"></rect>
+      <text x="30" y="27" text-anchor="middle">L</text>
+      <text x="30" y="47" text-anchor="middle">C</text>
+    </svg>
+  </a>
+  <nav class="site-nav" aria-label="Navegación principal">
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+    <ul id="nav-links" class="nav-links">
+      <li><a href="../index.html#about">Sobre mí</a></li>
+      <li><a href="../index.html#work">Proyectos</a></li>
+      <li><a href="../index.html#writing">Escritura</a></li>
+      <li><a href="../index.html#contact" class="nav-cta">Hablemos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="case-header">
+    <a href="../index.html#work" class="back-link reveal">← Todos los proyectos</a>
+  </div>
+
+  <section class="case-hero">
+    <div class="case-tags reveal">
+      <span class="project-tag">Proyecto propio</span>
+      <span class="project-tag">Fintech · IA como copiloto</span>
+    </div>
+    <h1 class="reveal">Konfía Seguros</h1>
+    <p class="case-hero__sub reveal">
+      ¿Cómo se vería una aseguradora española si la diseñara alguien que mira de cerca
+      a ING y Revolut? De la pregunta al prototipo navegable, solo, en código.
+    </p>
+    <div class="case-hero__facts reveal">
+      <div>
+        <span class="case-fact__label">Rol</span>
+        <span class="case-fact__value">Diseño y desarrollo, de punta a punta</span>
+      </div>
+      <div>
+        <span class="case-fact__label">Stack</span>
+        <span class="case-fact__value">Figma → React</span>
+      </div>
+      <div>
+        <span class="case-fact__label">Contexto</span>
+        <span class="case-fact__value">Ejercicio personal, sin cliente ni equipo</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2 class="reveal">El contexto</h2>
+    <p class="reveal">
+      La mayoría de los portales de seguros en España siguen una estética que no cambió
+      demasiado en una década: información dispersa, jerarquía visual plana, todo con
+      la misma prioridad. Mientras tanto, el sector fintech —ING, Revolut— redefinió lo
+      que un usuario espera de un producto financiero digital: claridad, personalización,
+      y una identidad visual que no se siente corporativa por obligación.
+    </p>
+    <p class="reveal">
+      Konfía Seguros nació como pregunta personal: ¿qué pasa si aplico esos estándares a
+      un dashboard de seguros? No fue un encargo — fue la excusa perfecta para diseñar y
+      construir algo de punta a punta, sin intermediarios entre la decisión y el código.
+    </p>
+  </section>
+
+  <section class="case-section">
+    <h2 class="reveal">Cómo se construyó</h2>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <span class="process-step__num"></span>
+        <div>
+          <h3>Research de referencia, no de mercado</h3>
+          <p>
+            En vez de analizar competidores de seguros, miré fintech: cómo ING y Revolut
+            resuelven jerarquía de información, color y tipografía en productos financieros
+            que sí se sienten modernos.
+          </p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-step__num"></span>
+        <div>
+          <h3>Sistema de tokens por rama de negocio</h3>
+          <p>
+            En vez de un solo color corporativo aplicado a todo, definí tokens de color
+            específicos por rama (auto, hogar, salud, vida), para que el usuario ubique
+            de un vistazo en qué parte del producto está.
+          </p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-step__num"></span>
+        <div>
+          <h3>Wizard de declaración de siniestros</h3>
+          <p>
+            El flujo más crítico de cualquier seguro. Lo diseñé como un wizard paso a
+            paso, con feedback constante de en qué punto del proceso está el usuario —
+            aplicando el mismo criterio de "diseñar para el estrés" que después usé
+            en proyectos reales del rubro.
+          </p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-step__num"></span>
+        <div>
+          <h3>De Figma a React, con IA como copiloto activo</h3>
+          <p>
+            Construí la SPA en React apoyándome en herramientas de IA para acelerar la
+            traducción de diseño a código — no para que decidieran por mí, sino para
+            mantener el ritmo entre una decisión de diseño y verla funcionando.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2 class="reveal">Por qué este proyecto importa en mi portfolio</h2>
+    <div class="decisions-grid">
+      <div class="decision-card reveal">
+        <h3>Sin filtro de cliente</h3>
+        <p>Es la prueba más directa de mi criterio de diseño puro, sin negociación ni restricciones externas.</p>
+      </div>
+      <div class="decision-card reveal">
+        <h3>Diseño y código, la misma persona</h3>
+        <p>Ninguna pérdida de intención entre Figma y el producto final — porque no hubo handoff, hubo continuidad.</p>
+      </div>
+      <div class="decision-card reveal">
+        <h3>IA como herramienta, no como atajo</h3>
+        <p>Documentar cómo la uso en el proceso es, hoy, parte de lo que un equipo quiere ver — no un detalle menor.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <h2 class="reveal">Reflexión</h2>
+    <div class="reflection-box">
+      <p class="reveal">
+        Este prototipo no está validado con usuarios reales, y eso es honesto decirlo: es
+        una exploración de diseño y de capacidad técnica, no un producto probado en
+        producción. Lo que sí me dejó claro es que puedo sostener un proyecto de principio
+        a fin sin depender de un equipo de desarrollo — y que ese es, hoy, un diferencial
+        real en el tipo de rol que busco.
+      </p>
+    </div>
+  </section>
+
+  <nav class="case-nav">
+    <a href="acciona-silence.html">← Caso anterior</a>
+    <a href="../index.html#contact" class="next-project">
+      ¿Hablamos?
+      <span class="project-name">Escribime →</span>
+    </a>
+  </nav>
+</main>
+
+<footer class="site-footer">
+  <svg class="hanko hanko--footer" viewBox="0 0 60 60" width="24" height="24" aria-hidden="true">
+    <rect x="4" y="4" width="52" height="52" rx="6"></rect>
+    <text x="30" y="27" text-anchor="middle">L</text>
+    <text x="30" y="47" text-anchor="middle">C</text>
+  </svg>
+  <p>Lautaro Curto — Product Designer / Design Engineer. Diseñado y construido a mano, sin plantilla.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
