@@ -245,6 +245,46 @@ section {
 .hero-meta .dot { color: var(--hanko); }
 
 /* ============================================
+   LOGOS MARQUEE
+   ============================================ */
+.logos-marquee {
+  position: relative;
+  padding-top: clamp(20px, 3vw, 32px);
+  padding-bottom: clamp(28px, 4vw, 44px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.logos-marquee::before, .logos-marquee::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: clamp(32px, 8vw, 120px);
+  z-index: 2; pointer-events: none;
+}
+.logos-marquee::before { left: 0; background: linear-gradient(to right, var(--washi), transparent); }
+.logos-marquee::after { right: 0; background: linear-gradient(to left, var(--washi), transparent); }
+.logos-marquee__label {
+  display: block; font-family: var(--font-mono); font-size: 11px; text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--sumi-soft); margin-bottom: 20px;
+}
+.logos-track {
+  display: flex; width: max-content;
+  animation: logos-scroll 26s linear infinite;
+}
+.logos-set { display: flex; align-items: center; gap: clamp(48px, 7vw, 96px); padding-right: clamp(48px, 7vw, 96px); }
+.logo-item {
+  height: clamp(20px, 3vw, 28px); width: auto; object-fit: contain;
+  filter: grayscale(1); opacity: 0.5;
+  transition: opacity .3s var(--ease), filter .3s var(--ease);
+}
+.logo-item:hover { filter: grayscale(0); opacity: 1; }
+@keyframes logos-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logos-track { animation: none; }
+}
+
+/* ============================================
    ABOUT
    ============================================ */
 .about-grid {
@@ -353,7 +393,7 @@ section {
    PROJECT TEASER CARDS (on landing)
    ============================================ */
 .project-card {
-  display: grid; grid-template-columns: 60px 1fr auto; align-items: center;
+  display: grid; grid-template-columns: 1fr auto; align-items: center;
   gap: 20px 28px; padding: clamp(28px, 4vw, 40px) 0;
   border-top: 1px solid var(--line); text-decoration: none;
   transition: padding-left .3s var(--ease);
@@ -361,22 +401,27 @@ section {
 .project-card:last-child { border-bottom: 1px solid var(--line); }
 .project-card:hover { padding-left: 12px; }
 .project-card:hover .project-card__title { color: var(--hanko); }
-.project-card__stamp { grid-row: 1 / span 2; }
 .project-card__meta { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
 .project-card__title {
   font-family: var(--font-display); font-size: clamp(24px, 3vw, 32px);
-  color: var(--sumi); transition: color .25s var(--ease); grid-column: 2;
+  color: var(--sumi); transition: color .25s var(--ease); grid-column: 1;
 }
 .project-card__sub {
-  grid-column: 2; font-size: 14.5px; color: var(--sumi-soft); margin-top: 6px; max-width: 56ch;
+  grid-column: 1; font-size: 14.5px; color: var(--sumi-soft); margin-top: 6px; max-width: 56ch;
 }
 .project-card__arrow {
-  grid-column: 3; grid-row: 1 / span 2; font-family: var(--font-mono);
+  grid-column: 2; grid-row: 1 / span 2; font-family: var(--font-mono);
   font-size: 14px; color: var(--sumi-soft); white-space: nowrap;
+}
+.project-card__thumb {
+  grid-column: 1 / -1; margin-top: 24px;
+  border: 1px solid var(--line); overflow: hidden;
+}
+.project-card__thumb img {
+  display: block; width: 100%; height: auto;
 }
 @media (max-width: 640px) {
   .project-card { grid-template-columns: 1fr; }
-  .project-card__stamp { grid-row: auto; margin-bottom: 14px; }
   .project-card__title, .project-card__sub, .project-card__arrow { grid-column: 1; }
   .project-card__arrow { margin-top: 10px; display: block; }
 }
@@ -421,6 +466,11 @@ section {
 }
 .case-note p { margin: 0; font-size: 14px; color: var(--sumi-soft); }
 
+.case-image {
+  margin-top: clamp(36px, 5vw, 56px); border: 1px solid var(--line); overflow: hidden;
+}
+.case-image img { display: block; width: 100%; height: auto; }
+
 .case-section {
   padding: clamp(48px, 7vw, 80px) var(--gutter); max-width: var(--max-w); margin: 0 auto;
   border-bottom: 1px solid var(--line);
@@ -451,6 +501,27 @@ section {
 
 .reflection-box { max-width: 66ch; }
 .reflection-box p { font-size: 17px; }
+
+.case-tldr {
+  font-family: var(--font-mono); font-size: 14px; color: var(--sumi);
+  background: var(--washi-2); border-left: 3px solid var(--hanko);
+  padding: 16px 20px; margin-top: 24px; max-width: 640px;
+}
+.case-tldr strong {
+  color: var(--hanko); text-transform: uppercase; font-size: 11px;
+  letter-spacing: 0.06em; display: block; margin-bottom: 6px;
+}
+.case-quote { padding-top: 0; padding-bottom: 0; }
+.pull-quote {
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: clamp(24px, 3vw, 34px); line-height: 1.3; color: var(--sumi);
+  border-left: 3px solid var(--hanko); padding-left: 28px; margin: 56px 0;
+  max-width: 640px;
+}
+.img-caption {
+  font-family: var(--font-mono); font-size: 12px; color: var(--sumi-soft);
+  margin-top: 10px; font-style: italic;
+}
 
 .img-placeholder {
   border: 1.5px dashed var(--line); border-radius: 6px;
