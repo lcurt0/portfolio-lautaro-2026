@@ -118,3 +118,6 @@ nuevos que también tengan NDA.
   confirmá con Lau si hay NDA y qué se puede mostrar.
 - Priorizá HTML/CSS/JS plano — nada de frameworks pesados, es parte de
   la identidad "design engineer, sin sobre-ingeniería" del sitio.
+- Antes de subir cualquier imagen nueva: optimizarla (comprimir, ancho máximo
+  ~1600px para capturas grandes, formato WebP cuando sea posible) y sumar
+  siempre un <p class="img-caption"> debajo describiendo brevemente qué se ve.
