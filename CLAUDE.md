@@ -100,6 +100,17 @@ nuevos que también tengan NDA.
 
 ## Pendientes conocidos (no asumir que están resueltos)
 
+- Idea pendiente: hover con preview de imagen al pasar el mouse sobre cada
+  proyecto en `#work` de `index.html` — estilo similar a portfolios de
+  agencia, pero adaptado a la identidad Washi/Hanko (sin sans-serif
+  gigante ni negro puro). Requiere JS para posicionar la imagen junto al
+  cursor, y necesita fallback para mobile (sin hover). Esperar a tener
+  las 4 imágenes de proyecto listas antes de implementar.
+- Meta tags `og:image` / `og:title` / `og:description` para que el link
+  comparta bien en LinkedIn/WhatsApp.
+- Verificar/crear favicon con el hanko.
+- Página 404 personalizada con identidad del sitio.
+
 - Confirmar NDA de ACCIONA Carbon Technologies para sumar capturas reales.
 - Posible sección de fotografía (Lau tiene Sony a7C) — evaluada pero no
   construida aún.
