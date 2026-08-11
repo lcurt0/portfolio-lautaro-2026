@@ -118,6 +118,30 @@ nuevos que también tengan NDA.
 - Sección de escritura enlaza a un Medium desactualizado
   (medium.com/@drk0_) — Lau planea retomarlo pero no hay fecha.
 
+## Auditoría de accesibilidad (WCAG 2.1 AA) — 2026-08-11
+
+El sitio pasó por una auditoría manual de accesibilidad sobre las 5 páginas
+(`index.html` + los 4 `proyectos/*.html`). Resultado:
+
+**Ya cumplía (sin cambios):**
+- Contraste de color: `--hanko`, `--sumi-soft` y `--moss` sobre `--washi`
+  superan 4.5:1 en claro y oscuro (rango real: 4.60:1–8.38:1; el más
+  ajustado es `--hanko` en modo oscuro, 4.60:1).
+- `alt` en todas las `<img>`, `aria-hidden` en todos los `<svg>` decorativos.
+- `aria-label` en el toggle de tema y nombre accesible en el toggle de
+  menú mobile; `aria-expanded` ya se actualizaba dinámicamente vía JS.
+- Un solo `<h1>` por página, sin saltos de nivel entre h2/h3.
+- `<header>`, `<main>`, `<nav>`, `<footer>` semánticos (no divs).
+- `lang="es"` presente en las 5 páginas.
+
+**Corregido:**
+- Agregado `:focus-visible` global (outline visible en `--hanko`) para
+  links, botones y `[tabindex]` — antes solo existía en `.nav-links a`.
+- Agregado skip link ("Saltar al contenido") al inicio del `<body>` en
+  las 5 páginas, con target `#main-content` en cada `<main>`.
+- Agregado `aria-label="Navegación entre casos"` a `.case-nav` en las 4
+  páginas de proyecto, para distinguirlo del `<nav>` principal del header.
+
 ## Cómo trabajar en este proyecto
 
 - Mantené el tono y el sistema de diseño existente — no introduzcas
