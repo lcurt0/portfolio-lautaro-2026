@@ -54,3 +54,47 @@ if (prefersReducedMotion) {
 } else {
   revealEls.forEach((el) => el.classList.add('is-visible'));
 }
+
+// Hover preview on project cards (agency-style, desktop only)
+const hoverPreview = document.getElementById('hoverPreview');
+const previewCards = document.querySelectorAll('.project-card[data-preview]');
+const workSection = document.getElementById('work');
+const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+if (hoverPreview && previewCards.length && workSection && canHover) {
+  const previewImg = hoverPreview.querySelector('img');
+  const offset = { x: 28, y: -24 };
+  let targetX = 0, targetY = 0, currentX = 0, currentY = 0, raf = null;
+  let activeCard = null;
+
+  function render() {
+    currentX += (targetX - currentX) * 0.2;
+    currentY += (targetY - currentY) * 0.2;
+    hoverPreview.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+    raf = requestAnimationFrame(render);
+  }
+
+  function hide() {
+    activeCard = null;
+    hoverPreview.classList.remove('is-visible');
+  }
+
+  workSection.addEventListener('mousemove', (e) => {
+    targetX = e.clientX + offset.x;
+    targetY = e.clientY + offset.y;
+
+    const card = e.target.closest('.project-card[data-preview]');
+    if (!card) {
+      if (activeCard) hide();
+      return;
+    }
+    if (card !== activeCard) {
+      activeCard = card;
+      previewImg.setAttribute('src', card.getAttribute('data-preview'));
+    }
+    hoverPreview.classList.add('is-visible');
+    if (!raf) raf = requestAnimationFrame(render);
+  });
+
+  workSection.addEventListener('mouseleave', hide);
+}

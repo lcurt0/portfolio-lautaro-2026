@@ -473,6 +473,25 @@ section {
   .project-card__arrow { margin-top: 10px; display: block; }
 }
 
+.hover-preview {
+  position: fixed; top: 0; left: 0; z-index: 500;
+  width: 300px; aspect-ratio: 8 / 5;
+  border: 1px solid var(--line); overflow: hidden;
+  background: var(--washi-2);
+  pointer-events: none;
+  opacity: 0; transform: translate3d(0, 0, 0) scale(0.97);
+  transition: opacity .25s var(--ease), transform .25s var(--ease);
+  will-change: transform, opacity;
+}
+.hover-preview.is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+.hover-preview img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (hover: none), (pointer: coarse) {
+  .hover-preview { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hover-preview { transition: opacity .15s linear; }
+}
+
 /* ============================================
    CASE STUDY PAGES
    ============================================ */

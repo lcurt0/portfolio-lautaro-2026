@@ -100,12 +100,14 @@ nuevos que también tengan NDA.
 
 ## Pendientes conocidos (no asumir que están resueltos)
 
-- Idea pendiente: hover con preview de imagen al pasar el mouse sobre cada
-  proyecto en `#work` de `index.html` — estilo similar a portfolios de
-  agencia, pero adaptado a la identidad Washi/Hanko (sin sans-serif
-  gigante ni negro puro). Requiere JS para posicionar la imagen junto al
-  cursor, y necesita fallback para mobile (sin hover). Esperar a tener
-  las 4 imágenes de proyecto listas antes de implementar.
+- Hover con preview de imagen al pasar el mouse sobre cada proyecto en
+  `#work` de `index.html` — **mecanismo implementado** (JS en `script.js`
+  + `.hover-preview` en `styles.css`, con fallback correcto para mobile
+  vía `(hover: none), (pointer: coarse)`). Las 5 tarjetas usan
+  `assets/occident/hero.jpg` como placeholder vía `data-preview`
+  mientras no haya capturas reales de Acciona Silence, Konfía, Acciona
+  Carbon y niba — reemplazar el atributo `data-preview` de cada tarjeta
+  por su imagen real a medida que estén listas.
 - Meta tags `og:image` / `og:title` / `og:description` para que el link
   comparta bien en LinkedIn/WhatsApp.
 - Verificar/crear favicon con el hanko.
