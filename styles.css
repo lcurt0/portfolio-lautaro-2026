@@ -537,6 +537,7 @@ section {
   margin-top: clamp(36px, 5vw, 56px); border: 1px solid var(--line); overflow: hidden;
 }
 .case-image img { display: block; width: 100%; height: auto; }
+.case-image--portrait { max-width: 320px; }
 
 .case-section {
   padding: clamp(48px, 7vw, 80px) var(--gutter); max-width: var(--max-w); margin: 0 auto;

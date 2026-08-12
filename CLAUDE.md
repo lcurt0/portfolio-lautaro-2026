@@ -76,14 +76,19 @@ actualizar los links "caso anterior/siguiente" en la página adyacente.
 ## Casos ya documentados
 
 1. **Occident** (renovación e-cliente, seguros) — bajo NDA, contenido
-   basado en fuentes públicas.
+   basado en fuentes públicas. Imagen real.
 2. **Acciona Motosharing / Silence** (movilidad eléctrica) — bajo NDA,
-   contenido basado en fuentes públicas.
+   contenido basado en fuentes públicas. Imagen real (app + vehículo,
+   de silence.eco).
 3. **Konfía Seguros** — proyecto personal, sin NDA, puede tener más detalle.
+   Sin imagen — no hay prototipo publicado en una URL propia.
 4. **ACCIONA Carbon Technologies** (cálculo/compensación de huella de
-   carbono) — bajo NDA. **PENDIENTE**: confirmar si se pueden usar
-   capturas de la App Store; por ahora tiene un placeholder de imagen
-   (`.img-placeholder`) sin reemplazar.
+   carbono) — bajo NDA. Uso de capturas del App Store confirmado por Lau;
+   tiene una captura real de la app (`.case-image--portrait`).
+5. **niba** (energía 100% digital, Grupo Iberdrola) — bajo NDA, contenido
+   basado en fuentes públicas (niba.es). Imagen real.
+6. **Madnum** (complejo de oficinas, Colonial) — bajo NDA, contenido
+   basado en fuentes públicas (madnum.com). Dos imágenes reales.
 
 Todos los proyectos bajo NDA usan el bloque `.case-note` para aclarar que
 el contenido es público/no confidencial. Mantené ese patrón en casos
@@ -103,11 +108,10 @@ nuevos que también tengan NDA.
 - Hover con preview de imagen al pasar el mouse sobre cada proyecto en
   `#work` de `index.html` — **mecanismo implementado** (JS en `script.js`
   + `.hover-preview` en `styles.css`, con fallback correcto para mobile
-  vía `(hover: none), (pointer: coarse)`). Las 5 tarjetas usan
-  `assets/occident/hero.jpg` como placeholder vía `data-preview`
-  mientras no haya capturas reales de Acciona Silence, Konfía, Acciona
-  Carbon y niba — reemplazar el atributo `data-preview` de cada tarjeta
-  por su imagen real a medida que estén listas.
+  vía `(hover: none), (pointer: coarse)`). 5 de 6 tarjetas ya tienen
+  imagen real vía `data-preview`; Konfía Seguros sigue usando
+  `assets/occident/hero.jpg` como placeholder porque no tiene una URL
+  propia publicada — actualizar cuando la tenga.
 - Meta tags `og:image` / `og:title` / `og:description` para que el link
   comparta bien en LinkedIn/WhatsApp.
 - Verificar/crear favicon con el hanko.
